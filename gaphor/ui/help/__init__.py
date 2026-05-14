@@ -96,7 +96,10 @@ class HelpService(Service, ActionProvider):
         remove_unused_elements: Adw.SwitchRow = builder.get_object(
             "remove_unused_elements"
         )
-
+        
+        endless_canvas: Adw.SwitchRow = builder.get_object("endless_canvas")
+        settings.bind_endless_canvas(endless_canvas, "active")
+        
         settings.bind_use_english(use_english, "active")
         use_english.connect("notify::active", self._on_use_english_selected)
 

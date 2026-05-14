@@ -52,6 +52,12 @@
                                 <property name="subtitle" translatable="yes">Automatically remove elements no longer in use in any diagram.</property>
                             </object>
                         </child>
+			<child>
+			    <object class="AdwSwitchRow" id="endless_canvas">
+				<property name="title" translatable="yes">Endless Canvas</property>
+				<property name="subtitle" translatable="yes">Allow scrolling far beyond existing diagram contents.</property>
+			    </object>
+			</child>
                     </object>
                 </child>
             </object>
