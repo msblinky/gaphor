@@ -55,6 +55,7 @@ class Settings:
         "style-variant",
         "reset-tool-after-create",
         "remove-unused-elements",
+        "endless-canvas",
     ]
 
     def __init__(self):
@@ -73,6 +74,18 @@ class Settings:
                 logger.warning(
                     "Settings schema not found and settings won’t be saved. Run `gaphor install-schemas`."
                 )
+
+    @property
+    def endless_canvas(self):
+        return (
+        self._gio_settings.get_boolean("endless-canvas")
+        if self._gio_settings
+        else True
+        )
+
+    def bind_endless_canvas(self, target, prop):
+        self._bind_propery("endless-canvas", target, prop)
+    
 
     @property
     def style_variant(self) -> StyleVariant:
@@ -141,4 +154,15 @@ class Settings:
             self._gio_settings.bind(name, target, prop, Gio.SettingsBindFlags.DEFAULT)
 
 
+    @property
+    def endless_canvas(self):
+        return (
+            self._gio_settings.get_boolean("endless-canvas")
+            if self._gio_settings
+            else True
+        )
+
+    def bind_endless_canvas(self, target, prop):
+        self._bind_propery("endless-canvas", target, prop)
+    
 settings = Settings()
