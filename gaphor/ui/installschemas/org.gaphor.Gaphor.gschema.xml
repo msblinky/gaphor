@@ -26,5 +26,10 @@
             <summary>Remove Unused Elements</summary>
             <description>Automatically remove elements no longer in use in any diagram.</description>
         </key>
+        <key name="endless-canvas" type="b">
+            <default>true</default>
+            <summary>Endless canvas</summary>
+            <description>Allow scrolling far beyond existing diagram contents.</description>
+        </key>
     </schema>
 </schemalist>
