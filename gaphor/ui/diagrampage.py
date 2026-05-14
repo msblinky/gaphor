@@ -32,6 +32,8 @@ from gaphor.ui.actiongroup import apply_action_group
 from gaphor.ui.clipboard import Clipboard
 from gaphor.ui.event import ToolSelected
 
+from gaphor.settings import settings
+
 log = logging.getLogger(__name__)
 
 
@@ -122,12 +124,16 @@ class DiagramPage:
 
         builder = new_builder()
         view: GtkView = builder.get_object("view")
+                
         view.add_css_class(self._css_class())
         view.connect("delete", delete_selected_items, self.event_manager)
         view.connect("cut-clipboard", self.clipboard.cut)
         view.connect("copy-clipboard", self.clipboard.copy)
         view.connect("paste-clipboard", self.clipboard.paste_link)
         view.connect("paste-full-clipboard", self.clipboard.paste_full)
+        view.scroll_margin = (
+            1_000_000 if settings.endless_canvas else 0
+        )
         self.clipboard.clipboard.connect(
             "notify::content", self._clipboard_content_changed
         )
