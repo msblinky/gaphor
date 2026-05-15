@@ -1,3 +1,7 @@
+# This is the Endless Canvas Version
+with an added feature to have virtually endless canvases
+
+
 <h1 align="center"><img src="https://github.com/gaphor/gaphor/blob/main/data/logos/gaphor-logo-full.svg?raw=true" alt="Gaphor - SysML/UML Modeling" height="96"/></h1>
 
 [![Build](https://github.com/gaphor/gaphor/actions/workflows/full-build.yml/badge.svg)](https://github.com/gaphor/gaphor/actions/workflows/full-build.yml?query=branch%3Amain)
